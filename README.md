@@ -63,9 +63,9 @@ Under Interacting with Running Containers Section
 Under Injecting Variables Section
   - Understand how to update Containerfile with ARG command and pass in '--build-arg=arg=value' during build time with the following command 'podman build -t <image:tag> --build-arg=arg-value -f <Containerfile Name>'
 Under Building Images Section
-  - You are tasked to update two Containerfile. When building the images, it's advisable to spell out the Containerfile Name with the following command 'podman build -t <image:tag> -f <Containerfile Name>' 
+  - You are tasked to update two Containerfile. When building the images, it's advisable to spell out the Containerfile Name with the following command 'podman build -t <registry_or_host_name/image:tag> -f <Containerfile Name>' 
   - To get the full image path (e.g. oci-registry:5000/<image:tag>) from the exam main page, as they only provide the <image:tag> in their instruction. You will need the full image path when updating the Containerfile (i.e. FROM full image path)
-  - To know how to write the command in Containerfile to execute .sh file  
+  - To know how to write the command in Containerfile to execute .sh file (`sh file_name.sh`)
 
 With all our sharing here, I am confident that you can definitely pass your exam on your first take.
 All the best and may the odds be ever in your favour! Fighting!
