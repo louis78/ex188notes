@@ -65,13 +65,13 @@ The following are the sub-tasks under each task that I did not managed to config
   - To create two running containers sharing the same container port 8080 and host port 80. <br/>
     I found the following article that might be of help (https://iximiuz.com/en/posts/multiple-containers-same-port-reverse-proxy/)
 #### Under Injecting Variables Section
-  - Understand how to update Containerfile with ARG command and pass in `--build-arg=arg=value` during build time with the following command `podman build -t <image:tag> --build-arg=arg-value -f <Containerfile Name>`
+  - Understand how to update Containerfile with ARG command and pass in `--build-arg=arg=value` during build time with the following command `podman build -t <registry_or_host_name/image:tag> --build-arg=arg-value -f <Containerfile Name>`
 #### Under Building Images Section
   - You are tasked to update two Containerfile.
   - When building the images, it's advisable to spell out the Containerfile Name with the following command `podman build -t <image:tag> -f <Containerfile Name>`
   - To get the full image path (e.g. oci-registry:5000/<image:tag>) from the exam main page, as only <image:tag> is given in the sub-task instruction.
   - You will need the full image path (e.g. oci-registry:5000/<image:tag>) when updating the Containerfile (i.e. FROM oci-registry:5000/<image:tag>)
-  - To know how to write the command in Containerfile to execute .sh file
+  - To know how to write the command in Containerfile to execute .sh file (`sh file_name.sh`)
 ##
 With all our sharing here, I am confident that you can definitely pass your exam on your first take. <br/>
 All the best and may the odds be ever in your favour! <br/>
