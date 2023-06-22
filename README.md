@@ -76,3 +76,31 @@ The following are the sub-tasks under each task that I did not managed to config
 With all our sharing here, I am confident that you can definitely pass your exam on your first take. <br/>
 All the best and may the odds be ever in your favour! <br/>
 FIGHTING!!!
+
+## Tips on EX188 6 Tasks (Updated on 22-June-2023)
+
+###
+Complete EX188 Chapter 2,4 and 5 lab exercise is good enough for exam.
+Ensure your name on your ID (e.g. NRIC) match with the name register for the exam.
+
+#### Q1 and Q2 (Run Container and copy files)
+ - Undertstand how to run container. `podman run -d --name <ContainerName> -p 8080:80 --net <network> <registry>`
+ - Undertstand how to copy local file to container directory after running the container `podman cp <src_dir> <ContainerName>:<dst_dir>`
+ - If you encounter some error copying the files, don't waste on it. Go to another question.
+   
+#### Q3 (Run Container on same port)
+ - Understand how to run 2 containers with same port. The 2 containers no need to run at the run time.
+ - Podman run the 1st containers first, test with browser to display 'Container File 1 Run' message. Stop the 1st container, then Podman run the 2nd container, test with browser to display 'Container File 2 Run' message.
+   
+#### Q4 (Build 2 Container Files)
+ - Required to build 2 container files. The first container file need to pass in 2 arguments. Use command like `FROM ARG ENV COPY` For second container file, no need pass in arguement. Just follow the instruction will do. Use command like `FROM COPY WORKDIR CMD` 
+ - Understand how to push the newly created image to another private registry. `podman push <image-name> <registry>/<repository>:<tag>`
+ - `podman build --build-arg DB_password_root=acm DB_password=acm -t oci-registry:5000/<image:tag> -f Containerfile-db`
+ 
+#### Q5 (Run Wordpress using 3 containers)
+ - Required to Podman run 3 containers (Frontend,Backend,DB). The Wordpress would display in browser if 3 containers run correctly.
+ - Use small `z`. This will let different containers share access to a blind mount. (Kudo to YL)
+ - `E.g podman run -d --name ContainerName -p 8080:80 -v <vol_created>:<container_dir>:z oci-registry:5000/<image:tag>`  
+#### Q6 (Troubleshooting)
+ - I just Podman run the 3 containers and get 71%. Encounter Forbidden Error 403. Don't how to resolve it.
+
